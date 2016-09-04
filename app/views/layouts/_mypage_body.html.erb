@@ -152,7 +152,7 @@
                     <% end %>
                   <% end %>
                   </span>
-                  <% if current_user.artist_name == @users.artist_name %>
+                  <% if @users.artist_name %>
                     <% user = @users.artist_name %>
                     <%= link_to "수정하기", controller: "dashboard", action:"mypage_edit", artist_name: user %>
                   <% end %>
@@ -168,7 +168,7 @@
           <!-- 정중앙에 트위터처럼 위치해야하는 엘리멘트들 -->
           <div class="post-by">
             <!-- 새 글 작성 폼시작 -->
-            <% if @users.artist_name == current_user.artist_name %>
+            <% if @users.artist_name %>
               <div style="margin-bottom:10px">
                 <%= form_tag '/dashboard/write_post' do %>
                   <div class="panel panel-default" style="width:450px; height:200px">
