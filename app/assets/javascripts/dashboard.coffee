@@ -10,3 +10,12 @@ jQuery(document).ready ->
       $('#mob-manage').hide()
   else
     $('#only_mobile').hide()
+
+  # Dashboard 현재 페이지 피드백
+  if $(controller_name).val() == "dashboard"
+      page = $(action_name).val()
+      $('.ui.borderless.menu').ready ->
+        $('#' + 'mob' + '-' + page).addClass 'active'
+        return
+      return
+  else
